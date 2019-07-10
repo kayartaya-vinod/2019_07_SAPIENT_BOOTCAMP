@@ -62,7 +62,7 @@ const HelloWorld = function () {
             <p>my first react app - Vinod</p>
             <ContactCard data={p1} />
             <ContactCard data={p2} />
-            <ContactCard data={p2} />
+            <ContactCard data={p3} />
         </div>
     </div>;
 }
