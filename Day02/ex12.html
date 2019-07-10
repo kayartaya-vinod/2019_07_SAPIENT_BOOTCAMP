@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX Demo</title>
+    <script src="./ex12.js"></script>
+</head>
+
+<body>
+    <h1>AJAX Demo</h1>
+    <hr>
+    <form onsubmit="fetchContactDetails(); return false;">
+        <label for="contactId">Enter contact id: </label>
+        <input type="number" id="contactId">
+    </form>
+
+    <img src="" alt="" id="picture">
+
+    <div>
+        <label for="name">Name: </label>
+        <span id="name"></span>
+    </div>
+    <div>
+        <label for="email">Email address: </label>
+        <span id="email"></span>
+    </div>
+    <div>
+        <label for="phone">Phone number: </label>
+        <span id="phone"></span>
+    </div>
+
+</body>
+
+</html>

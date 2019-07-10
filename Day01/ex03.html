@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Table example</title>
+</head>
+
+<body>
+    <h1>HTML Table example</h1>
+    <hr>
+    <!-- table>((thead>(tr>th*5))+(tbody>(tr*3>td*5))) -->
+    <table border="1" width="700px">
+        <thead>
+            <tr>
+                <th rowspan="2">Sl No</th>
+                <th rowspan="2">Name</th>
+                <th colspan="3">Contact details</th>
+            </tr>
+            <tr>
+                <th>City</th>
+                <th>Email address</th>
+                <th>Phone number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Vinod Kumar</td>
+                <td>Bangalore</td>
+                <td>vinod@vinod.co</td>
+                <td>9731424784</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>John Doe</td>
+                <td>Dallas</td>
+                <td>johndoe@example.com</td>
+                <td>5551212345</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Jane Doe</td>
+                <td>Chicago</td>
+                <td>janedoe@example.com</td>
+                <td>5553456123</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Demo</title>
+    <script>
+        console.log('typeof $ is ', typeof $);
+        console.log('typeof jQuery is ', typeof jQuery);
+    </script>
+    <script src="/assets/jquery/jquery-3.4.1.js"></script>
+    <script>
+        console.log('typeof $ is ', typeof $);
+        console.log('typeof jQuery is ', typeof jQuery);
+        console.log('$===jQuery is', $===jQuery);
+
+        // $ can be called in three ways:
+        // 1. $(function(){}); --> call the function after DOM ready event
+        // 2. $("selector"); --> search and return an array of jQuery objects matching the selector
+        // 3. $("<tagname>"); --> to create a new HTML DOM element in the memory
+
+        $(function(){
+            // console.log('$("h1").length is', $("h1").length);
+            // tag selector:
+            // $("h1").css("border", "2px solid red");
+
+            // id selector:
+            // $("#list1").css("border", "2px solid red");
+
+            // parent-child selector
+            // $("#list1 > li").css("border", "2px solid red");
+
+            // ancesor - descendent
+            // $("#list1 li").css("border", "2px solid red");
+
+            // first element
+            // $("#list1 > li:first").css("border", "2px solid red");
+            // $("#list1 > li:last").css("border", "2px solid blue");
+            // $("#list1 > li:eq(2)").css("border", "2px solid green");
+            // $("li:even").css("background-color", "yellow").css("border", "2px solid green")
+
+            // based on CSS class
+            $(".a").css("border", "2px solid red");
+            $(".b").css("border", "2px solid red");
+            $(".a,.b").css("border", "2px solid red"); // class="a" or class="b"
+            $(".a.b").css("border", "2px solid red"); // class="a b" or class="b a"
+
+        });
+</script>
+</head>
+
+<body>
+    <h1>jQuery Demo</h1>
+    <hr>
+    <h1 class="a">by Vinod</h1>
+
+    <ul id="list1">
+        <li>list item 1</li>
+        <li class="a b">list item 2</li>
+        <li class="a">list item 3</li>
+        <li class="b">list item 4
+            <ul>
+                <li>sub item 1</li>
+                <li>sub item 2</li>
+                <li>sub item 3</li>
+                <li>sub item 4</li>
+                <li>sub item 5</li>
+            </ul>
+        </li>
+        <li>list item 5</li>
+    </ul>
+   
+</body>
+
+</html>

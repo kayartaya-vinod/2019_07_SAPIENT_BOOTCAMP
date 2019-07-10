@@ -1,0 +1,7 @@
+#puzzle > button {
+    width: 75px;
+    height: 75px;
+    margin: 3px;
+    font-size: 20pt;
+    cursor: pointer;
+}

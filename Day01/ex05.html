@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Example</title>
+
+    <style>
+        h3 {
+            color: red;
+            font-size: 1.5em;
+        }
+
+        ul > li {
+            border: 1px solid #f00;
+        }
+
+        #list2 > li {
+            background-color: #b67d6f;
+            border: 2px dashed #ffba00;
+        }
+
+        .medium {
+            width: 300px;
+        }
+
+        .bordered {
+            border: 1px dotted #ccc;
+            border-radius: 10px !important;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Examples</h1>
+    <h3>By Vinod</h3>
+    <hr>
+    <p>Browsers donot give errors for HTML and CSS</p>
+
+    <img class="medium bordered" src="/assets/images/andhraspice.jpg" alt="">
+    <img class="medium circle" src="/assets/images/andhraspice.jpg" alt="">
+    <img class="medium circle bordered" src="/assets/images/andhraspice.jpg" alt="">
+    <img class="medium bordered circle" src="/assets/images/andhraspice.jpg" alt="">
+
+    <!-- ul>li{Item $}*5 -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2
+            <ol>
+                <li>Sub item 1</li>
+                <li>Sub item 2</li>
+                <li>Sub item 3</li>
+                <li>Sub item 4</li>
+            </ol>
+        </li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <ol id="list2">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ol>
+    
+</body>
+</html>

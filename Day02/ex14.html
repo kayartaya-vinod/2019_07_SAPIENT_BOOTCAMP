@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Slideshow</title>
+    <script src="/assets/jquery/jquery-3.4.1.js"></script>
+
+    <style>
+        .slide {
+            width: 500px;
+            height: 350px;
+            position: fixed;
+        }
+    </style>
+    <script>
+        // DOM-Ready event handler
+        $(function () {
+            $('div#images>img')
+                .addClass('slide')
+                .on('click', function(){
+                    // get "this" image, which was clicked by the user
+                    var img = $(this);
+                    // and prepend to the div#images
+                    // 
+                    img.fadeOut(1000, function(){
+                        $("div#images").prepend(img);
+                        img.css("display", "block");
+                    });
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>jQuery Slideshow</h1>
+
+    <div id="images">
+        <img src="/assets//images/lion.jpg" alt="lion">
+        <img src="/assets/images/panther.jpg" alt="panther">
+        <img src="/assets/images/cheetah.jpg" alt="cheetah">
+        <img src="/assets/images/deer.jpg" alt="deer">
+        <img src="/assets/images/tiger.jpg" alt="tiger">
+        <img src="/assets/images/elephant.jpg" alt="elephant">
+
+
+    </div>
+</body>
+
+</html>
