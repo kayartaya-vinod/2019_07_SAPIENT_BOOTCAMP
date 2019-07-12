@@ -18,8 +18,16 @@ class ContactForm extends Component {
         // submit event, fired when (1) you clicked the submit button
         // (2) you pressed enter key on any input elements
         evt.preventDefault(); // do not submit to HTTP SERVER
-        this.props.addContact(this.state);
-        // clear the form element by restting the state
+        this.props.addContact({...this.state});
+        // clear the form elements by restting the state
+        this.setState({
+            firstname: '', lastname: '', email: '', phone: '',
+            address: '', city: 'Bangalore', state: 'Karnataka', country: 'India',
+            picture: 'http://www.biswanathcollege.in/images/staff/maleUser.png',
+            gender: 'Male'
+        });
+
+       
     }
     render() {
         return (
@@ -29,15 +37,15 @@ class ContactForm extends Component {
                     <div>
                         <label>
                             <input type="radio" name="gender"
-                                checked = {this.state.gender==='Male'}
+                                checked={this.state.gender === 'Male'}
                                 value="Male"
                                 onChange={this.tfChangeHandler} /> &nbsp; Male
                         </label>
-                        &nbsp;  &nbsp;  &nbsp; 
+                        &nbsp;  &nbsp;  &nbsp;
                         <label>
                             <input type="radio" name="gender"
                                 value="Female"
-                                checked = {this.state.gender==='Female'}
+                                checked={this.state.gender === 'Female'}
                                 onChange={this.tfChangeHandler} /> &nbsp; Female
                         </label>
                     </div>
