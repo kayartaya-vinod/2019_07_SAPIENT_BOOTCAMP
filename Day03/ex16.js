@@ -48,3 +48,8 @@ function sayHello({ phone, fullname, country='India' }) {
     console.log(`Name = ${fullname}, phone = ${phone}, countr=${country}`);
 }
 sayHello(p1);
+
+
+names.map(function(){
+    console.log(arguments)
+})

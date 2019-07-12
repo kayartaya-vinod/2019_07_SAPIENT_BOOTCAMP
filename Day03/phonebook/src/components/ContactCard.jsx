@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ContactCard.css';
 
 // a stateful component is a class that 
 // must inherit from React.Component class, 
@@ -12,23 +13,33 @@ class ContactCard extends Component {
         // let email = 'vinod@vinod.co';
         // let phone = '9731424784';
 
-        let { firstname,
+        let { id,
+            firstname,
             lastname,
             email,
             phone,
             picture } = this.props.data;
 
         return (
-            <div className="card" style={{ width: '250px', float: 'left' }}>
-                < img src={picture} className="card-img-top" alt={firstname} />
-                <div className="card-body">
-                    <h5 className="card-title">
-                        {firstname} {lastname}
-                    </h5>
-                    <p>{email}</p>
-                    <p>{phone}</p>
-                </div>
-            </div >
+            <div className="col-sm-6 col-md-4">
+                <div className="card">
+                    < img src={picture} className="card-img-top" alt={firstname} />
+                    <div className="card-body">
+                        <h5 className="card-title">
+                            {firstname} {lastname}
+                            <button
+                                onClick={() => { 
+                                    if(window.confirm('Are you sure to delete this?')) {
+                                        this.props.deleteContact(id);
+                                    }
+                                }}
+                                className="btn btn-link text-danger pull-right">&times;</button>
+                        </h5>
+                        <p>{email}</p>
+                        <p>{phone}</p>
+                    </div>
+                </div >
+            </div>
         );
     }
 

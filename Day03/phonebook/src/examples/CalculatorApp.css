@@ -1,0 +1,12 @@
+button.btn {
+    padding: 25px;
+    margin: 3px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.pull-right {
+    float: right
+}
