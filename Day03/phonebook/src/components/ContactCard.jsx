@@ -27,14 +27,21 @@ class ContactCard extends Component {
                     <div className="card-body">
                         <h5 className="card-title">
                             {firstname} {lastname}
+                        </h5>
+                        <div>
                             <button
-                                onClick={() => { 
-                                    if(window.confirm('Are you sure to delete this?')) {
+                                onClick={() => {
+                                    this.props.editContact(this.props.data);
+                                }}
+                                className="btn btn-link text-primary">&#9998;</button>
+                            <button
+                                onClick={() => {
+                                    if (window.confirm('Are you sure to delete this?')) {
                                         this.props.deleteContact(id);
                                     }
                                 }}
-                                className="btn btn-link text-danger pull-right">&times;</button>
-                        </h5>
+                                className="btn btn-link text-danger">&times;</button>
+                        </div>
                         <p>{email}</p>
                         <p>{phone}</p>
                     </div>

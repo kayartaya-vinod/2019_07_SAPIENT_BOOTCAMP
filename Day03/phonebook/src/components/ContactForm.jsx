@@ -1,11 +1,37 @@
 import React, { Component } from 'react';
+const defaultValues = {
+    id: undefined, dob: '',
+    firstname: '', lastname: '', email: '', phone: '',
+    address: '', city: 'Bangalore', state: 'Karnataka', country: 'India',
+    picture: 'http://www.biswanathcollege.in/images/staff/maleUser.png',
+    gender: 'Male'
+};
+
 class ContactForm extends Component {
-    state = {
-        gender: 'Male',
-        city: 'Bangalore',
-        state: 'Karnataka',
-        country: 'India',
-        picture: 'http://www.biswanathcollege.in/images/staff/maleUser.png'
+
+    state = { ...defaultValues, editingDataLoaded: false }
+
+    static getDerivedStateFromProps(props, state) {
+
+        if(state.reset) {
+            // happens every time the Reset button is clicked
+            return {...defaultValues, reset: false};
+        }
+
+        let { isEditing, editingContact } = props;
+        if ((isEditing && !state.editingDataLoaded) || (state.id !== editingContact.id)) {
+            // first condition ensures that the editingContact becomes the state
+            // only once, and the second condition ensures that new data can be 
+            // loaded on editing a different contact 
+            return { ...editingContact, editingDataLoaded: true };
+        }
+        else {
+            return { ...state }
+        }
+    }
+
+    resetForm = () => {
+        this.setState({ reset: true });
     }
 
     tfChangeHandler = (evt) => {
@@ -18,22 +44,18 @@ class ContactForm extends Component {
         // submit event, fired when (1) you clicked the submit button
         // (2) you pressed enter key on any input elements
         evt.preventDefault(); // do not submit to HTTP SERVER
-        this.props.addContact({...this.state});
+        this.props.addContact({ ...this.state });
         // clear the form elements by restting the state
-        this.setState({
-            firstname: '', lastname: '', email: '', phone: '',
-            address: '', city: 'Bangalore', state: 'Karnataka', country: 'India',
-            picture: 'http://www.biswanathcollege.in/images/staff/maleUser.png',
-            gender: 'Male'
-        });
+        this.setState({ ...defaultValues });
 
-       
+
     }
     render() {
         return (
             <div>
                 <h5 className="text-center">Add / Update contact details</h5>
                 <form onSubmit={this.submitHandler}>
+
                     <div>
                         <label>
                             <input type="radio" name="gender"
@@ -131,6 +153,10 @@ class ContactForm extends Component {
 
                     <br />
                     <button className="btn btn-primary">Save changes</button>
+                    <button type="button"
+                        style={{marginLeft: '10px'}}
+                        onClick={this.resetForm}
+                        className="btn btn-secondary">Rest form</button>
                 </form>
             </div>
 

@@ -15,11 +15,16 @@ var baseUrl = 'http://localhost:4000/contacts/';
 // A component created using a class is called stateful component
 class App extends Component {
 
-    state = { contacts: [] }
+    state = { contacts: [], editingContact: {}, isEditing: false }
 
     constructor() {
         super(); // must invoke superclass constructor
         this.deleteContact = this.deleteContact.bind(this);
+    }
+
+    editContact = (editingContact) => {
+        this.setState({isEditing: true, editingContact});
+        console.log('editing contact for', editingContact)
     }
 
     addContact = (contact) => {
@@ -79,10 +84,14 @@ class App extends Component {
                 {/* .row>.col-md-3+.col */}
                 <div className="row">
                     <div className="col-md-3">
-                        <ContactForm addContact={this.addContact} />
+                        <ContactForm
+                            isEditing={this.state.isEditing}
+                            editingContact={this.state.editingContact}
+                            addContact={this.addContact} />
                     </div>
                     <div className="col">
                         <ContactList
+                            editContact = {this.editContact}
                             data={this.state.contacts}
                             deleteContact={this.deleteContact} />
 
