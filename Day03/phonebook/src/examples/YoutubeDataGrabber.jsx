@@ -21,7 +21,7 @@ const format = duration => {
 
 class YoutubeDataGrabber extends Component {
     state = {
-        videoIds: ['iAzShkKzpJo', 'bY6m6_IIN94', 'c59Qzq_03CY', 'KOdfpbnWLVo'],
+        videoIds: [],
         lessons: [],
         theClass: ''
     }
@@ -45,7 +45,20 @@ class YoutubeDataGrabber extends Component {
         vidId.focus();
     }
 
-    getDataButtonHandler = () => {
+    addClassButtonHandler = (evt) => {
+        evt.preventDefault();
+        this.state.theClass.lessons.sort((a, b) => a.id - b.id);
+        Axios.post('http://localhost:3000/classes/', this.state.theClass)
+            .then(resp => {
+                console.log(resp);
+                this.setState({ theClass: {}, className: '', videoIds: [] });
+                this.refs.className.value = '';
+                this.refs.className.focus();
+            });
+    }
+
+    getDataButtonHandler = (evt) => {
+        evt.preventDefault();
         let { videoIds } = this.state;
 
         let lessons = [];
@@ -54,7 +67,6 @@ class YoutubeDataGrabber extends Component {
         theClass.title = this.refs.className.value;
         theClass.id = slugify(theClass.title.toLowerCase());
         theClass.lessons = lessons;
-        this.setState({ theClass });
 
         videoIds.forEach((id, index) => {
             let url = `https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${api_key}&part=${part}`;
@@ -62,15 +74,25 @@ class YoutubeDataGrabber extends Component {
                 .then(data => {
                     let { items } = data.data;
                     items.forEach(item => {
-                        let { title, description } = item.snippet;
+                        console.log('snippet', item.snippet);
+                        console.log('contentDetails', item.contentDetails);
+
+                        let { title, description, thumbnails, channelTitle } = item.snippet;
                         let { duration } = item.contentDetails;
                         let slug = slugify(title);
                         let lesson = { id: index + 1, title, slug, description, duration: format(duration), vid_id: id };
                         lessons.push(lesson);
                         this.setState({ lessons });
+                        if (index === 0) {
+                            theClass.thumbnail = thumbnails.standard.url;
+                        }
+                        if (index === 0) {
+                            theClass.channel = channelTitle;
+                        }
                     });
                 });
-        })
+        });
+        this.setState({ theClass });
     }
 
     render() {
@@ -104,9 +126,13 @@ class YoutubeDataGrabber extends Component {
                             <button className="btn btn-primary">
                                 Add video
                             </button>
-                            <button className="btn btn-secondary"
+                            <button className="btn btn-primary"
                                 onClick={this.getDataButtonHandler}>
                                 Get data
+                            </button>
+                            <button className="btn btn-primary"
+                                onClick={this.addClassButtonHandler}>
+                                Add class
                             </button>
                         </form>
 

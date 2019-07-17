@@ -17,8 +17,14 @@ service.createNewContact = (contact) => {
     // if all is well, then contact should be appended to the data
 };
 
-service.updateContact = (contact) => { console.error('updateContact not implemented yet') };
-service.deleteContact = (id) => { console.error('deleteContact not implemented yet') };
+service.updateContact = (contact) => { 
+    
+};
+service.deleteContact = (id) => { 
+    // id must be a number; otherwise throw an error
+    // if id is found, then delete the corresponding contact from 'data'
+    // else throw an error indicating the id is invalid
+};
 
 service.getContactById = (id) => {
     if (typeof id !== 'number') {
