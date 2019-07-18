@@ -13,7 +13,7 @@ class ContactCard extends Component {
         // let email = 'vinod@vinod.co';
         // let phone = '9731424784';
 
-        let { id,
+        let { _id,
             firstname,
             lastname,
             email,
@@ -37,7 +37,7 @@ class ContactCard extends Component {
                             <button
                                 onClick={() => {
                                     if (window.confirm('Are you sure to delete this?')) {
-                                        this.props.deleteContact(id);
+                                        this.props.deleteContact(_id);
                                     }
                                 }}
                                 className="btn btn-link text-danger">&times;</button>

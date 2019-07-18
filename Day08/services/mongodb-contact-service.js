@@ -1,5 +1,5 @@
 const { MongoClient, ObjectId } = require('mongodb');
-const url = 'mongodb://localhost'
+const url = 'mongodb://localhost:27017'
 const requiredFields = ['firstname', 'email', 'phone', 'city'];
 
 module.exports.getContactById = async (id) => {
@@ -37,11 +37,20 @@ module.exports.addNewContact = async (contact) => {
     const contacts = conn.db('trainingdb').collection('contacts');
     const response = await contacts.insertOne(contact);
     conn.close();
-    return response.insertedId;
+    contact._id = response.insertedId;
+    return contact;
 }
 
 module.exports.updateContact = async (contact) => { }
-module.exports.deleteContact = async (id) => { }
+module.exports.deleteContact = async (id) => {
+    if (!id || typeof id !== 'string') {
+        throw 'id was not supplied or was not a string';
+    }
+    let _id = ObjectId(id);
+    const conn = await MongoClient.connect(url, { useNewUrlParser: true });
+    const contacts = conn.db('trainingdb').collection('contacts');
+    return await contacts.deleteOne({_id});
+}
 
 module.exports.getAllContacts = async (options = {}) => {
     let {

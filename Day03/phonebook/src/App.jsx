@@ -9,7 +9,7 @@ import 'bootstrap/dist/js/bootstrap';
 import ContactList from './components/ContactList';
 import ContactForm from './components/ContactForm';
 
-var baseUrl = 'http://localhost:5000/api/contacts/';
+var baseUrl = 'http://localhost:4000/api/contacts/';
 
 // A component created using a funciton is called stateless component
 // A component created using a class is called stateful component
@@ -53,7 +53,7 @@ class App extends Component {
         fetch(baseUrl + id, { method: 'DELETE' })
             .then(() => {
                 const contacts = [...this.state.contacts]; // shallow copy
-                const index = contacts.findIndex(c => c.id === id);
+                const index = contacts.findIndex(c => c._id === id);
                 contacts.splice(index, 1);
                 this.setState({ contacts });
             })
