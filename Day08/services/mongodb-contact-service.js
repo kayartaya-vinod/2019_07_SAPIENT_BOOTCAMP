@@ -42,4 +42,31 @@ module.exports.addNewContact = async (contact) => {
 
 module.exports.updateContact = async (contact) => { }
 module.exports.deleteContact = async (id) => { }
-module.exports.getAllContacts = async (options) => { }
+
+module.exports.getAllContacts = async (options = {}) => {
+    let {
+        pageNum = 1,
+        pageSize = 10,
+        sortBy = '_id',
+        sortOrder = 'asc'
+    } = options;
+
+    if (typeof pageNum !== 'number' || typeof pageSize !== 'number') {
+        throw 'either pageNum or pageSize was not a number';
+    }
+    let skip = (pageNum - 1) * pageSize;
+    const conn = await MongoClient.connect(url, { useNewUrlParser: true });
+    const contacts = conn.db('trainingdb').collection('contacts');
+
+    const queryOptions = {};
+    const filterOptions = {
+        limit: pageSize,
+        skip,
+        sort: {
+            [sortBy]: sortOrder === 'asc' ? 1 : -1
+        }
+    };
+    const contactsData = await contacts.find(queryOptions, filterOptions).toArray();
+    conn.close();
+    return contactsData;
+}
