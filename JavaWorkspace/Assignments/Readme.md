@@ -451,10 +451,56 @@ Create a menu driven application to manage product catalog. When the application
 1. Search products by name
 1. Search products by price range
 1. List out-of-stock products
-1. List products that are on pending orders
 1. List products that are no longer sold
 1. Add a new product
 1. Edit product details
 1. Exit
 
 
+### 1. Lsit all products
+
+Should display the id, name, quantity-per-unit and the unit-price of all the products (that are not discontinued)
+
+### 2. Search a product by id
+
+Should accept a product-id from the user and display all the details about that product, if exists. If there are no products for the given id, an appropriate error should be displayed.
+
+### 3. Search products by name
+
+Should accept a text from the user and list out all the products (id, name, quantity-per-unit and the unit-price) that match the input text (even partially).
+
+### 4. Search products by price range
+
+Should accept two numbers (minimum and maximum prices), and list out all the products (id, name, quantity-per-unit and the unit-price)  that belong to the given price range.
+
+### 5. List out-of-stock products
+
+Should display all the products (id, name, quantity-per-unit and the unit-price) which have 0 as the value for units-in-stock field of the product object.
+
+### 6. List products that are no longer sold
+
+Should display all the products (id, name, quantity-per-unit and the unit-price) which have 1 as the value for discontinued field of the product object.
+
+### 7. Add a new product
+
+Should accept all the details of the product and should be added to the underlying repository (array or collection or csv-file or serialized-file or database table). The value for id field should be auto generated.
+
+### 8. Edit product details
+
+Should display the details of the product (except id) and should accept new values for each of the fields from the user. If the user simply presses ENTER key, the value for that field should not be changed.
+
+### 9. Exit
+
+Should exit the app.
+
+Any other inputs apart from the above should result in an error message and re-display the menu. After each of the above operation is performed, the menu is re-displayed.
+
+Whenever an input is expected from the user, handle the erroneous inputs appropriately.
+
+## Classes required for the application:
+
+1. Product.java
+
+```java
+
+```
