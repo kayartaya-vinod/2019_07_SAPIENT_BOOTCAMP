@@ -10,7 +10,8 @@ public class P01_UsingVariables {
 
 		c1 = new Customer();
 		
-		c1.print();
+		// TODO print the details of c1
+		
 		
 	}
 }
