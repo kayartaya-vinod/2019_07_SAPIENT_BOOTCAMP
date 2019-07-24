@@ -13,7 +13,7 @@ public class App {
 
 	public void start() {
 		int intCount = 0, nonIntCount = 0, sum = 0;
-		String intInputs = "The integer inputs = ", nonIntInput = "The non-integer inputs = ";
+		String intInputs = " ", nonIntInput = " ";
 
 		while (true) {
 			String input = getStringFromKeyboard("Enter a number: ");
