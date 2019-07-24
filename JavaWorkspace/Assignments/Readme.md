@@ -137,3 +137,305 @@ PS:
 * Divide the function into small reusable functions, if possible.
 * Do not use builtin Java classes like `Math`
 ---
+
+
+### Assignment 9
+
+
+Implement the Java function listed below:
+
+````java
+public static void printCalendar(int month, int year) {
+	/// do stuff here
+}
+````
+
+The function should accept `month` and `year` and print the calendar for the same. If inputs are invalid, appropriate error message/s should be printed.
+
+Sample output for the inputs (8, 2018):
+
+````
+Su Mo Tu We Th Fr Sa  
+          1  2  3  4  
+ 5  6  7  8  9 10 11  
+12 13 14 15 16 17 18  
+19 20 21 22 23 24 25  
+26 27 28 29 30 31  
+````
+
+PS: 
+* Do not use any builtin Java classes like `Date` or `Calendar`
+* Divide the function into small reusable functions, if possible.
+
+---
+
+### Assignment 10
+Write a function called "sumOfEvensAndOdds", that takes an array of integers as input and returns another array of integers of length 2. The first element in the returned array is the sum of all even numbers in the input array, and the second element in the returned array is the sum of all odd numbers in the input array.
+
+````java
+public int[] sumOfEvensAndOdds(int []nums) { 
+	// do stuff here
+	return null;
+}
+````
+
+For example,
+ 
+````java
+int [] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; 
+int [] result = sumOfEvensAndOdds(nums);
+// result should be equal to {30, 25}
+````
+
+Hint:
+
+An arrays is created as shown below:
+
+````java
+int []arr = new int[2];
+arr[0] = 12;
+arr[1] = 100;
+````
+
+or
+
+````java
+int []arr = {12, 100}
+````
+
+Call the function in main, multiple times by supplying multiple values and verify the same.
+
+---
+
+### Assignment 11
+Write a function called "reverseByWords", that takes a sentence (string) as an input, and returns another string. The return value must be a sentence in which the words in the original sentence appear in reverse order.
+
+````java
+public String reverseByWords(String sentence) { 
+	// do stuff here
+	return null; 
+}
+````
+
+
+For example,
+
+````java
+String out = reverseByWords("my name is vinod and i live in bangalore");
+// the variable "out" should be equal to "bangalore in live i and vinod is name my".
+````
+
+Call the function in main, multiple times by supplying multiple values and verify the same.
+
+---
+### Assignment 12
+
+
+Write a function called "inWords" that takes a number between 1 and 99,99,99,999 and returns a String representing the input number in words.
+
+````java
+public String inWords(int num) { 
+	// do stuff here
+	return null; 
+}
+
+````
+For example,
+
+````java
+inWords(12345);
+// should return "twelve thousand three hundred forty five"
+inWords(10203040);
+// should return "one crore two lakh three thousand forty"
+inWords(101);
+// should return "one hundred one"
+````
+
+
+Call the function in main, multiple times by supplying multiple values and verify the same.
+
+---
+### Assignment 13
+
+Implement the following function:
+
+```java
+public static void printAllCombinations(String word) {
+	// do stuff here
+}
+```
+
+The function should take a word (no spaces and special characters, only alpha numeric), and print all possible combinations of letters in the given word.
+
+For example, for the input "win", the output should be:
+
+```
+[iwn, nwi, inw, wni, win, niw]
+```
+
+And for the input "vinod", the output should be:
+```
+[vidon, vonid, doniv, dovin, inodv, ivdon, vdnio, nivod, ovdin, ivodn, viodn, noidv, 
+ondiv, dvoni, vidno, indvo, ivdno, nvodi, oindv, oivdn, idvon, dnovi, idnov, nvdoi, 
+onidv, doinv, vndoi, voind, noivd, vdion, iovnd, ovidn, nvoid, idvno, ionvd, dvnoi, 
+vnido, oidvn, vdoni, ndivo, vindo, novdi, idnvo, ndoiv, oidnv, dionv, vndio, iovdn, 
+iondv, viond, ndvoi, odniv, odvin, diovn, nodiv, nviod, onvdi, vodni, invod, ovndi, 
+vinod, dinov, vodin, divon, donvi, nvdio, ivnod, idonv, ovdni, dvion, nidov, ovnid, 
+ondvi, niodv, idovn, ndvio, onvid, dvino, divno, vnoid, dnoiv, odivn, ndiov, vondi, 
+nvido, dnivo, dinvo, dnvoi, odinv, dvoin, iodnv, nidvo, doivn, invdo, ovind, vdoin, 
+iodvn, vnodi, oinvd, ndovi, vdino, ivndo, onivd, nivdo, oivnd, inovd, ivond, dnvio, 
+odnvi, voidn, novid, dniov, dovni, vniod, nodvi, odvni, vdnoi, dvnio, indov, niovd]
+
+```
+
+Call the function in main, multiple times by supplying multiple values and verify the same.
+
+---
+### Assignment 14
+
+Implement the following function:
+
+```java
+public static String generatePassword(int length) {
+	// do stuff here
+}
+```
+
+The function should return a random string, each time when called, of required length (function argument). The password consists of lower case and upper case alphabets, digits from 0 to 9, special characters `~!@#$%^&*`
+
+Hint: 
+
+`Math.random()` returns a number between 0.0 and 1.0
+
+
+
+---
+### Assignment 15
+
+Create classes `Circle` and `Cylinder` as shown in the *UML* diagram below:
+
+<img src="images/ExerciseOOP_CircleCylinder.png">
+
+
+In the `main()` function of a Program class, create an array of `Circle` references with the initialization shown below:
+
+````java
+Circle[] circles = {
+	new Cylinder(12.34),
+	new Cylinder(12.34, 10.0),
+	new Cylinder(12.34, 10.0, "blue")
+};
+
+````
+
+Print the area of the circular region of each cylinder along with the volume of the same.
+
+
+---
+### Assignment 16
+
+Create the classes `Person`, `Student`, and `Staff` as shown in the *UML* diagram below:
+
+<img src="images/ExerciseOOP_PersonAndSubclasses.png">
+
+
+
+In the `main()` function of a Program class, create an array of `Person` references with the initialization shown below:
+
+````java
+Person[] people = {
+	new Student("Shyam", "Bangalore, Karnataka", "Java fundamentals", 2010, 4500.0),
+	new Staff("Anand", "Bangalore, Karnataka", "Delhi Public school", 35000.0), 
+	new Staff("Umesh", "Bangalore, Karnataka", "National Public school", 42000.0), 
+	new Student("Suresh", "Hassan, Karnataka", "Java fundamentals", 2012, 4750.0),
+	new Student("Kiran", "Vasco, Goa", "Reactjs", 2017, 12500.0)
+};
+
+````
+
+Print the details of all `Person` objects (using the `toString()`).
+
+
+---
+
+### Assignment 17
+
+Create the classes `Shape`, `Circle`, `Rectangle`, and `Square` as shown in the *UML* diagram below:
+
+
+<img src="images/ExerciseOOP_ShapeAndSubclasses.png">
+
+
+The `toString` function of the above classes should return text as given below:
+
+Classname|Sample return value from toString()
+---|---
+Shape|A Shape with color of xxx and filled/Not filled
+Circle|A Circle with radius=xxx, which is a subclass of yyy (where yyy is the output of the toString() method from the superclass)
+Rectangle|A Rectangle with width=xxx and length=zzz, which is a subclass of yyy (where yyy is the output of the toString() method from the superclass)
+Square|A Square with side=xxx, which is a subclass of yyy (where yyy is the output of the toString() method from the superclass)
+
+In the `main()` method of a Program class, create an array of 10 `Shape` references containing a mixture of `Circle`, `Rectangle` and `Square` objects of different dimensions. Using a loop, print the `perimeter` and `area` for all of them.
+
+
+---
+
+### Assignment 18
+
+Write a Java application to accept integers in a loop. After each number is accepted, the user should be asked if he/she wishes to continue. If the user inputs "NO", then the loop should be stopped and following output should be displayed:
+
+```
+Number of inputs = X
+Number of integer inputs = Y
+Number of non-integer inputs = Z
+Sum of all integer inputs = XX
+The integer inputs = N1, N2, N3, ...
+The non-integer inputs = ASD, SDF, DFG, ...
+X, Y, Z, etc should be actual values, based on the inputs.
+```
+
+HINT: 
+
+Use `java.util.Scanner` for accepting data from the user. 
+
+```java
+Scanner s = new Scanner(System.in);
+String input = s.nextLine();
+int n = s.nextInt();
+double d = s.nextDouble();
+// ... s
+```
+
+---
+
+### Assignment 19
+
+Write a function called "calendar" that takes a String representing year/month in YYYY-MM format and returns a two-dimensional array representing the calendar for the input month and year.
+
+
+For example, if the input is "2018-03”, then the output is:
+
+```
+{
+	{0, 0, 0, 0, 1, 2, 3},
+	{4, 5, 6, 7, 8, 9, 10},
+	{11, 12, 13, 14, 15, 16, 17}, 
+	{18, 19, 20, 21, 22, 23, 24}, 
+	{25, 26, 27, 28, 29, 30, 31}
+}
+```
+
+For input "2018-02", the output should be:
+
+```
+{
+	{0, 0, 0, 0, 1, 2, 3},
+	{4, 5, 6, 7, 8, 9 10},
+	{11, 12, 13, 14, 15, 16, 17}, 
+	{18, 19, 20, 21, 22, 23, 24}, 
+	{25, 26, 27, 28, 0, 0, 0}
+}
+```
+The method should throw a custom exception **InvalidDateException**, in case if the input does not represent a valid year/month combination, and **InvalidInputException** in case if the input is not in the expected YYYY-MM format.
+
+
