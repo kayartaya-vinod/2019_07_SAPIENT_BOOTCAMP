@@ -502,5 +502,19 @@ Whenever an input is expected from the user, handle the erroneous inputs appropr
 1. Product.java
 
 ```java
+@NoArgsConstructor
+@Setter
+@Getter
+@ToString(of = { "productName", "unitPrice" })
+public class Product {
+	private Integer productId;
+	private String productName;
+	private String quantityPerUnit;
+	private Double unitPrice;
+	private Integer unitsInStock;
+	private Integer unitsOnOrder;
+	private Integer reorderLevel;
+	private Boolean discontinued;
 
+}
 ```
