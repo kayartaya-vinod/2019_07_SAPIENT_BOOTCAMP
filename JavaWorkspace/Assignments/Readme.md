@@ -522,44 +522,30 @@ public class Product {
 }
 ```
 
-## ArrayProductDao.java
+## ProductDao.java
 
 ```java
 package com.ps.assignment20.dao;
 
 // imports here
 
-public class ArrayProductDao {
+public interface ProductDao {
 
-	public List<Product> getAllProducts() throws DaoException {
-		return null;
-	}
+	public List<Product> getAllProducts() throws DaoException;
 
-	public Product getProduct(int productId) throws DaoException {
-		return null;
-	}
+	public Product getProduct(int productId) throws DaoException;
 
-	public List<Product> getProductsByName(String name) throws DaoException {
-		return null;
-	}
+	public List<Product> getProductsByName(String name) throws DaoException;
 
-	public List<Product> getAllProductsByPrice(double min, double max) throws DaoException {
-		return null;
-	}
+	public List<Product> getAllProductsByPrice(double min, double max) throws DaoException;
 
-	public List<Product> getOutOfStockProducts() throws DaoException {
-		return null;
-	}
+	public List<Product> getOutOfStockProducts() throws DaoException;
 
-	public List<Product> getDiscontinuedProducts() throws DaoException {
-		return null;
-	}
+	public List<Product> getDiscontinuedProducts() throws DaoException;
 
-	public void addNewProduct() throws DaoException {
-	}
+	public void addNewProduct() throws DaoException;
 
-	public void updateProduct(Product product) throws DaoException {
-	}
+	public void updateProduct(Product product) throws DaoException;
 }
 ```
 
