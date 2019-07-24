@@ -502,10 +502,13 @@ Whenever an input is expected from the user, handle the erroneous inputs appropr
 1. Product.java
 
 ```java
+package com.publicissapient.training.entity;
+
+// imports here
+
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString(of = { "productName", "unitPrice" })
 public class Product {
 	private Integer productId;
 	private String productName;
@@ -518,3 +521,55 @@ public class Product {
 
 }
 ```
+
+## ArrayProductDao.java
+
+```java
+package com.ps.assignment20.dao;
+
+// imports here
+
+public class ArrayProductDao {
+
+	public List<Product> getAllProducts() throws DaoException {
+		return null;
+	}
+
+	public Product getProduct(int productId) throws DaoException {
+		return null;
+	}
+
+	public List<Product> getProductsByName(String name) throws DaoException {
+		return null;
+	}
+
+	public List<Product> getAllProductsByPrice(double min, double max) throws DaoException {
+		return null;
+	}
+
+	public List<Product> getOutOfStockProducts() throws DaoException {
+		return null;
+	}
+
+	public List<Product> getDiscontinuedProducts() throws DaoException {
+		return null;
+	}
+
+	public void addNewProduct() throws DaoException {
+	}
+
+	public void updateProduct(Product product) throws DaoException {
+	}
+}
+```
+
+Othere related classes are:
+
+1. App.java --> contains the code for displaying menu, accepting data from keyboard etc
+2. DaoException.java --> custom checked exception 
+3. KeyboardUtil.java --> public static functions to accept data from the keyboard
+	1. getInt(message)
+	1. getString(message)
+	1. getDouble(message)
+	1. etc.
+
