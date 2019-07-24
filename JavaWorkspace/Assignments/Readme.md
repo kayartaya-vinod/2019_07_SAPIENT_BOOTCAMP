@@ -439,3 +439,22 @@ For input "2018-02", the output should be:
 The method should throw a custom exception **InvalidDateException**, in case if the input does not represent a valid year/month combination, and **InvalidInputException** in case if the input is not in the expected YYYY-MM format.
 
 
+
+---
+
+### Assignment 20
+
+Create a menu driven application to manage product catalog. When the application is run, it should display the following menu options:
+
+1. List all products
+1. Search a product by id
+1. Search products by name
+1. Search products by price range
+1. List out-of-stock products
+1. List products that are on pending orders
+1. List products that are no longer sold
+1. Add a new product
+1. Edit product details
+1. Exit
+
+
