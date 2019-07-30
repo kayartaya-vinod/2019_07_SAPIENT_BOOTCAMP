@@ -4,6 +4,11 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="lib" path="jars/lombok.jar"/>
+	<classpathentry kind="lib" path="jars/h2-1.4.197.jar"/>
+	<classpathentry kind="lib" path="jars/mysql-connector-java-8.0.15.jar"/>
+	<classpathentry kind="lib" path="jars/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="jars/postgresql-42.2.6.jar"/>
+	<classpathentry kind="lib" path="jars/mssql-jdbc-7.2.2.jre8.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
