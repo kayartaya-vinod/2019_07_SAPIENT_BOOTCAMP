@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello, Sapients!</title>
+</head>
+<body>
+	<h1>Hello, Sapients</h1>
+	<hr />
+	
+<%@ page contentType="text/html" import="java.sql.*" %>
+	
