@@ -1,4 +1,4 @@
-<h3>Here are few useful links..</h3>
+<h3>Hi, there!</h3>
 <ul class="list-group">
 	<li class="list-group-item"><a href="./">Home</a></li>
 	<li class="list-group-item"><a href="get-all-products">All products</a></li>
