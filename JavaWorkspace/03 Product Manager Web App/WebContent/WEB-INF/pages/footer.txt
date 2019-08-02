@@ -1,0 +1,11 @@
+</div>
+		</div>
+		
+		<div class="text-center">
+			&copy; 2019 &middot; All rights reserved by 
+			<a href="https://vinod.co">https://vinod.co</a>
+		</div>
+		
+	</div>
+</body>
+</html>

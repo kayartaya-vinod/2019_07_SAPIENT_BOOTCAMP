@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Product Manager WebApp</title>
+<link rel="stylesheet" type="text/css" 
+	href="assets/css/bootstrap.min.css" >
+</head>
+<body>
+	<div class="container">
+		<div class="alert alert-info">
+			<h1>Product Manager WebApp - v1.0</h1>
+			<hr />
+			<p>Powered by Servlets and JSP, Developed by Vinod</p>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-3" style="min-height: 400px">
+				<%@ include file="./sidebar.txt" %>
+			</div>
+			
+			
+			<div class="col-md-9">

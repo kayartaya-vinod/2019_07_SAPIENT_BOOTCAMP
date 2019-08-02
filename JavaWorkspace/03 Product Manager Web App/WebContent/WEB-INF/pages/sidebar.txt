@@ -1,0 +1,9 @@
+<h3>Here are few useful links..</h3>
+<ul class="list-group">
+	<li class="list-group-item"><a href="./">Home</a></li>
+	<li class="list-group-item"><a href="get-all-products">All products</a></li>
+	<li class="list-group-item"><a href="./discontinued-products">Discontinued products</a></li>
+	<li class="list-group-item"><a href="./out-of-stock-products">Out of stock products</a></li>
+	<li class="list-group-item"><a href="./">Add new product</a></li>
+	<li class="list-group-item"><a href="./">About us</a></li>
+</ul>
