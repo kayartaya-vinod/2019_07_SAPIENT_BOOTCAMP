@@ -4,6 +4,7 @@ import com.publicissapient.training.entity.Product;
 
 public class P02_ProductInstance {
 	
+	@SuppressWarnings("unused")
 	private int num;
 	
 	class Hello {

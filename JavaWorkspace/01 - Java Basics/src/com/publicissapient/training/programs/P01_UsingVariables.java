@@ -6,11 +6,11 @@ public class P01_UsingVariables {
 
 	public static void main(String[] args) {
 		
+		@SuppressWarnings("unused")
 		Customer c1; // reference; 8 bytes in stack
 
 		c1 = new Customer();
 		
-		// TODO print the details of c1
 		
 		
 	}
