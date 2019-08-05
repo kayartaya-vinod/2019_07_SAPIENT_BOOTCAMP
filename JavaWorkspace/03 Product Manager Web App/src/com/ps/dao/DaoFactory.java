@@ -7,6 +7,8 @@ public final class DaoFactory {
 
 	public static ProductDao getProductDao(String discriminator) throws DaoException {
 		switch (discriminator.toLowerCase()) {
+		case "hibernate":
+			return new HibernateProductDao();
 		case "jdbc":
 			return new JdbcProductDao();
 		case "arraylist":

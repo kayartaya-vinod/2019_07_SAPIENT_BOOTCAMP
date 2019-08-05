@@ -28,6 +28,6 @@ public interface ProductDao {
 
 	public Collection<Product> getProductsByName(String namePattern) throws DaoException;
 
-	public Integer count();
+	public Integer count() throws DaoException;
 
 }

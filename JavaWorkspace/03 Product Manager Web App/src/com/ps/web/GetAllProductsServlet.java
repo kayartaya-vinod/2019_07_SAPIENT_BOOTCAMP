@@ -26,7 +26,7 @@ public class GetAllProductsServlet extends HttpServlet {
 			// Responsibilities of a controller servlet
 			// 1. Read the input from the request (if any)
 			// 2. Get the model data from service/dao
-			ProductDao dao = DaoFactory.getProductDao("jdbc");
+			ProductDao dao = DaoFactory.getProductDao("hibernate");
 			Collection<Product> list = dao.getAllProducts();
 			
 			// 3. Store the model data in a place (scope) accessible to the view
