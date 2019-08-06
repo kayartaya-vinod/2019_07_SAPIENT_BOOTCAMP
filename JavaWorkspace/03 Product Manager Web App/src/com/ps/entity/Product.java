@@ -46,6 +46,10 @@ public class Product {
 	@ManyToOne // foreign keys of a table are always represented as many-to-one
 	@JoinColumn(name = "category_id")
 	private Category category;
+	
+	@ManyToOne
+	@JoinColumn(name="supplier_id")
+	private Supplier supplier;
 
 	public Product(String productName, String quantityPerUnit, Double unitPrice, Integer unitsInStock) {
 		setProductName(productName);

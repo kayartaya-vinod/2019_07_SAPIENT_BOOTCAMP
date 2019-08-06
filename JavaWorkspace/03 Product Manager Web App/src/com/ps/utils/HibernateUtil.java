@@ -5,6 +5,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.ps.entity.Category;
 import com.ps.entity.Product;
+import com.ps.entity.Supplier;
 
 public final class HibernateUtil {
 
@@ -23,6 +24,7 @@ public final class HibernateUtil {
 		// register your entity classes with hibernate
 		cfg.addAnnotatedClass(Product.class);
 		cfg.addAnnotatedClass(Category.class);
+		cfg.addAnnotatedClass(Supplier.class);
 		
 		factory = cfg.buildSessionFactory();
 		return factory;

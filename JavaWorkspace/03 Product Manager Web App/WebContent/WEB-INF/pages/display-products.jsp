@@ -19,7 +19,7 @@
 		<tr>
 			<th>Product name</th>
 			<th>Category</th>
-			<th>Quantity per unit</th>
+			<th>Supplied by</th>
 			<th>Unit price</th>
 			<th>Discontinued?</th>
 		</tr>
@@ -32,7 +32,7 @@
 				<td><a
 					href="./get-category-info?cat_id=${ p.category.categoryId }">
 						${p.category.categoryName} </a></td>
-				<td>${p.quantityPerUnit }</td>
+				<td>${p.supplier.companyName} (${p.supplier.contactDetails.city})</td>
 				<td>${p.unitPrice}</td>
 				<td>${p.discontinued?"Yes":"No"}</td>
 			</tr>
