@@ -2,6 +2,7 @@ package com.ps.dao;
 
 import java.util.Collection;
 
+import com.ps.entity.Category;
 import com.ps.entity.Product;
 
 public interface ProductDao {
@@ -15,6 +16,11 @@ public interface ProductDao {
 	public void updateProduct(Product product) throws DaoException;
 
 	public Product deleteProduct(Integer productId) throws DaoException;
+	
+	// ideally this should be in CategoryDao interface (but ... an exception)
+	public default Category getCategory(Integer categoryId) throws DaoException  {
+		throw new DaoException("Method not implemented yet!");
+	}
 
 	// Queries
 

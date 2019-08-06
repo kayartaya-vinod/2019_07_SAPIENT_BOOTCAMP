@@ -3,6 +3,7 @@ package com.ps.utils;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.ps.entity.Category;
 import com.ps.entity.Product;
 
 public final class HibernateUtil {
@@ -19,7 +20,10 @@ public final class HibernateUtil {
 
 		Configuration cfg = new Configuration(); // empty configuration object
 		cfg.configure(); // reads and initalizes itself from hibernate.cfg.xml
-		cfg.addAnnotatedClass(Product.class); // register your entity classes with hibernate
+		// register your entity classes with hibernate
+		cfg.addAnnotatedClass(Product.class);
+		cfg.addAnnotatedClass(Category.class);
+		
 		factory = cfg.buildSessionFactory();
 		return factory;
 	}

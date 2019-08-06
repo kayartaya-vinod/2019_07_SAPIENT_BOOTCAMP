@@ -4,26 +4,20 @@
   <welcome-file-list>
     <welcome-file>/WEB-INF/pages/index.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-  	<servlet-name>price-form</servlet-name>
-  	<jsp-file>/WEB-INF/pages/price-form.jsp</jsp-file>
+    <servlet-name>price-form</servlet-name>
+    <jsp-file>/WEB-INF/pages/price-form.jsp</jsp-file>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>price-form</servlet-name>
-  	<url-pattern>/price-form</url-pattern>
+    <servlet-name>price-form</servlet-name>
+    <url-pattern>/price-form</url-pattern>
   </servlet-mapping>
-  
   <error-page>
-  	<error-code>404</error-code>
-  	<location>/WEB-INF/pages/404.jsp</location>
+    <error-code>404</error-code>
+    <location>/WEB-INF/pages/404.jsp</location>
   </error-page>
-  
   <error-page>
-  	<exception-type>java.lang.Exception</exception-type>
-  	<location>/WEB-INF/pages/exception.jsp</location>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/WEB-INF/pages/exception.jsp</location>
   </error-page>
-  
-  
 </web-app>

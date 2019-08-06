@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import com.ps.entity.Category;
 import com.ps.entity.Product;
 import com.ps.utils.HibernateUtil;
 
@@ -72,6 +73,16 @@ public class HibernateProductDao implements ProductDao {
 			throw new DaoException(e);
 		} finally {
 			session.close();
+		}
+	}
+	
+	@Override
+	public Category getCategory(Integer categoryId) throws DaoException {
+		try(Session session = factory.openSession()) {
+			return session.get(Category.class, categoryId);
+		}
+		catch(Exception ex) {
+			throw new DaoException(ex);
 		}
 	}
 
@@ -148,3 +159,4 @@ public class HibernateProductDao implements ProductDao {
 	}
 
 }
+
