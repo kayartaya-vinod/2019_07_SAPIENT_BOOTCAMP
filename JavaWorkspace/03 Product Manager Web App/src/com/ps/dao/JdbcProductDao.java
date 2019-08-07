@@ -12,27 +12,26 @@ import com.ps.utils.DbUtil;
 
 public class JdbcProductDao implements ProductDao {
 
+	DaoException ex = new DaoException("Not implemented!");
+	
 	@Override
 	public Integer addNewProduct(Product product) throws DaoException {
-
-		return null;
+		throw ex;
 	}
 
 	@Override
 	public Product getProduct(Integer productId) throws DaoException {
-
-		return null;
+		throw ex;
 	}
 
 	@Override
 	public void updateProduct(Product product) throws DaoException {
-
+		throw ex;
 	}
 
 	@Override
 	public Product deleteProduct(Integer productId) throws DaoException {
-
-		return null;
+		throw ex;
 	}
 
 	@Override
@@ -107,20 +106,17 @@ public class JdbcProductDao implements ProductDao {
 
 	@Override
 	public Collection<Product> getProductsByPriceRange(Double min, Double max) throws DaoException {
-
-		return null;
+		throw ex;
 	}
 
 	@Override
 	public Collection<Product> getProductsByName(String namePattern) throws DaoException {
-
-		return null;
+		throw ex;
 	}
 
 	@Override
-	public Integer count() {
-
-		return null;
+	public Integer count() throws DaoException {
+		throw ex;
 	}
 
 }

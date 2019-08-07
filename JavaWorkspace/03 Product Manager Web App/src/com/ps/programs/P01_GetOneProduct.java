@@ -20,7 +20,6 @@ public class P01_GetOneProduct {
 		factory.close();
 		
 		System.out.println(p1);
-		
 	}
 	
 }

@@ -1,7 +1,6 @@
 package com.ps.dao;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -90,8 +89,7 @@ public class HibernateProductDao implements ProductDao {
 	public Collection<Product> getAllProducts() throws DaoException {
 		try (Session session = factory.openSession();) {
 			Query<Product> qry = session.createQuery("from Product", Product.class);
-			List<Product> list = qry.getResultList();
-			return list;
+			return qry.getResultList();
 		} catch (Exception e) {
 			throw new DaoException(e);
 		}
@@ -101,8 +99,8 @@ public class HibernateProductDao implements ProductDao {
 	public Collection<Product> getProductsNotInStock() throws DaoException {
 		try (Session session = factory.openSession();) {
 			Query<Product> qry = session.createQuery("from Product where unitsInStock=0", Product.class);
-			List<Product> list = qry.getResultList();
-			return list;
+			return qry.getResultList();
+
 		} catch (Exception e) {
 			throw new DaoException(e);
 		}
@@ -112,8 +110,8 @@ public class HibernateProductDao implements ProductDao {
 	public Collection<Product> getDiscontinuedProducts() throws DaoException {
 		try (Session session = factory.openSession();) {
 			Query<Product> qry = session.createQuery("from Product where discontinued=true", Product.class);
-			List<Product> list = qry.getResultList();
-			return list;
+			return qry.getResultList();
+
 		} catch (Exception e) {
 			throw new DaoException(e);
 		}
@@ -126,8 +124,8 @@ public class HibernateProductDao implements ProductDao {
 					Product.class);
 			qry.setParameter("MIN", min);
 			qry.setParameter("MAX", max);
-			List<Product> list = qry.getResultList();
-			return list;
+			return qry.getResultList();
+
 		} catch (Exception e) {
 			throw new DaoException(e);
 		}
@@ -138,8 +136,7 @@ public class HibernateProductDao implements ProductDao {
 		try (Session session = factory.openSession();) {
 			Query<Product> qry = session.createQuery("from Product where productName like ?", Product.class);
 			qry.setParameter(0, "%" + namePattern + "%");
-			List<Product> list = qry.getResultList();
-			return list;
+			return qry.getResultList();
 
 		} catch (Exception e) {
 			throw new DaoException(e);
