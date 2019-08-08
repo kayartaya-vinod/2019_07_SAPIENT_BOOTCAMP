@@ -28,6 +28,7 @@ public class JdbcProductDao implements ProductDao {
 	private DataSource dataSource;
 
 	public JdbcProductDao(String driver, String url, String username, String password) {
+		System.out.println("JdbcProductDao instantiated!");
 		this.driver = driver;
 		this.url = url;
 		this.username = username;

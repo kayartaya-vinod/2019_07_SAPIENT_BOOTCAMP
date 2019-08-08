@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 
 import com.ps.dao.DummyProductDao;
 import com.ps.dao.JdbcProductDao;
@@ -27,14 +28,29 @@ public class AppConfig1 {
 	
 	@Value("${jdbc.password}")
 	private String password;
+	
+	public AppConfig1() {
+		System.out.println("AppConfig1 instantiated!");
+	}
 
+	@Scope("singleton")
 	@Bean(name="dao")
 	public ProductDao jdbcDao() {
+		System.out.println("AppConfig1.jdbcDao() called");
 		return new JdbcProductDao(driver, url, user, password);
 	}
 
+	@Scope("prototype")
 	@Bean
 	public ProductDao dummyDao() {
+		
+		System.out.println("Inside the AppConfig1.dummyDao() 'this.getClass().getName()' is " + this.getClass().getName());
+		for(int i=1; i<=5; i++) {
+			System.out.println("Inside the loop, i is " + i);
+			this.jdbcDao();
+		}
+		
+		System.out.println("AppConfig1.dummyDao() called");
 		return new DummyProductDao();
 	}
 }

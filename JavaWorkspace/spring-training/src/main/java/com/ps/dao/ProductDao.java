@@ -2,9 +2,12 @@ package com.ps.dao;
 
 import java.util.Collection;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.ps.entity.Product;
 
 public interface ProductDao {
+	@Transactional(readOnly = false)
 	public default Integer addNewProduct(Product product) throws DaoException {
 		throw new DaoException("Not implemented!");
 	}
@@ -13,10 +16,12 @@ public interface ProductDao {
 		throw new DaoException("Not implemented!");
 	}
 
+	@Transactional(readOnly = false)
 	public default void updateProduct(Product product) throws DaoException {
 		throw new DaoException("Not implemented!");
 	}
 
+	@Transactional(readOnly = false)
 	public default Product deleteProduct(Integer productId) throws DaoException {
 		throw new DaoException("Not implemented!");
 	}

@@ -2,7 +2,7 @@ package com.ps.programs;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.ps.cfg.AppConfig3;
+import com.ps.cfg.AppConfig1;
 import com.ps.dao.DaoException;
 import com.ps.dao.ProductDao;
 
@@ -14,7 +14,7 @@ public class P01_GetProductCount {
 		AnnotationConfigApplicationContext ctx;
 
 		// create a new spring container using the AppConfig1 as configuration file
-		ctx = new AnnotationConfigApplicationContext(AppConfig3.class);
+		ctx = new AnnotationConfigApplicationContext(AppConfig1.class);
 
 		ProductDao dao = ctx.getBean("dao", ProductDao.class);
 		System.out.println("There are " + dao.count() + " products.");

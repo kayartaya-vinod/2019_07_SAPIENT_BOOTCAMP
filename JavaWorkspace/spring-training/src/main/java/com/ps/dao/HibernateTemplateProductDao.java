@@ -51,7 +51,7 @@ public class HibernateTemplateProductDao implements ProductDao {
 	
 	@Override
 	public Collection<Product> getProductsByPriceRange(Double min, Double max) throws DaoException {
-		return (Collection<Product>) template.find("from Product where unitPrice between ? and ?", min, max);
+		return (Collection<Product>) template.find("from Product where unitPrice between ?0 and ?1", min, max);
 	}
 	
 	@Override
