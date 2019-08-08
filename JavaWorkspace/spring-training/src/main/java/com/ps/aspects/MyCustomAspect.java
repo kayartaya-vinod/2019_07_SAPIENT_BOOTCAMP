@@ -20,15 +20,12 @@ public class MyCustomAspect {
 		if(min>max) {
 			args = new Object[] {max, min};
 		}
-		// now going to the target function
-		Object obj = pjp.proceed(args);
-		// came back from the target function
 		
-		return obj;
+		return pjp.proceed(args);
 	}
 
 	@AfterThrowing(value = "execution(* com.ps..*Dao.*(..))", throwing = "ex")
-	public void exceptionConverter(Exception ex) throws Throwable {
+	public void exceptionConverter(Exception ex) throws DaoException {
 		throw new DaoException(ex);
 	}
 

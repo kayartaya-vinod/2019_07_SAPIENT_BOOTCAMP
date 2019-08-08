@@ -1,9 +1,12 @@
 package com.ps.dao;
 
+import java.util.logging.Logger;
+
 public class DummyProductDao implements ProductDao {
-	
+	Logger logger = Logger.getLogger("DummyProductDao");
+
 	public DummyProductDao() {
-		System.out.println("DummyProductDao instantiated!");
+		logger.info("DummyProductDao instantiated!");
 	}
 
 	@Override

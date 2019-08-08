@@ -1,6 +1,7 @@
 package com.ps.cfg;
 
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -16,17 +17,25 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.ps.entity.Category;
 import com.ps.entity.Product;
 import com.ps.entity.Supplier;
 
+@EnableWebMvc
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
 @Configuration
 @PropertySource({ "classpath:jdbc-info.properties" })
-@ComponentScan(basePackages = { "com.ps.dao", "com.ps.aspects" })
+@ComponentScan(basePackages = { "com.ps.dao", "com.ps.aspects", "com.ps.web.controllers" })
 public class AppConfig4 {
+	
+	Logger logger = Logger.getLogger("AppConfig4");
+	
+	public AppConfig4() {
+		logger.info("AppConfig4 instantiated!");
+	}
 	
 	@Bean
 	public HibernateTransactionManager txMgr(SessionFactory sf) {

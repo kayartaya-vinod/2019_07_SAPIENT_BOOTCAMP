@@ -1,5 +1,7 @@
 package com.ps.cfg;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,40 +19,43 @@ import com.ps.dao.ProductDao;
 @PropertySource({ "classpath:jdbc-info.properties" })
 public class AppConfig1 {
 
+	Logger logger = Logger.getLogger("AppConfig1");
+
 	@Value("${jdbc.driver_class_name}")
 	private String driver;
-	
+
 	@Value("${jdbc.url}")
 	private String url;
-	
+
 	@Value("${jdbc.username}")
 	private String user;
-	
+
 	@Value("${jdbc.password}")
 	private String password;
-	
+
 	public AppConfig1() {
-		System.out.println("AppConfig1 instantiated!");
+		logger.info("AppConfig1 instantiated!");
 	}
 
 	@Scope("singleton")
-	@Bean(name="dao")
+	@Bean(name = "dao")
 	public ProductDao jdbcDao() {
-		System.out.println("AppConfig1.jdbcDao() called");
+		logger.info("AppConfig1.jdbcDao() called");
 		return new JdbcProductDao(driver, url, user, password);
 	}
 
 	@Scope("prototype")
 	@Bean
 	public ProductDao dummyDao() {
-		
-		System.out.println("Inside the AppConfig1.dummyDao() 'this.getClass().getName()' is " + this.getClass().getName());
-		for(int i=1; i<=5; i++) {
-			System.out.println("Inside the loop, i is " + i);
+
+		logger.info(String.format("Inside the AppConfig1.dummyDao() 'this.getClass().getName()' is %s",
+				this.getClass().getName()));
+		for (int i = 1; i <= 5; i++) {
+			logger.info(String.format("Inside the loop, i is %d", i));
 			this.jdbcDao();
 		}
-		
-		System.out.println("AppConfig1.dummyDao() called");
+
+		logger.info("AppConfig1.dummyDao() called");
 		return new DummyProductDao();
 	}
 }
