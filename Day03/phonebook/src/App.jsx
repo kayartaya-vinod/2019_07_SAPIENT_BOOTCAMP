@@ -71,7 +71,7 @@ class App extends Component {
         fetch(baseUrl)
             .then(resp => resp.json())
             .then(data => {
-                data.sort((c1, c2) => c2.id - c1.id);
+                data.sort((c1, c2) => c2._id - c1._id);
                 this.setState({ contacts: data })
             })
             .catch(err => console.log(err));

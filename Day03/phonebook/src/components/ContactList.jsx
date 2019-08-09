@@ -9,7 +9,7 @@ import ContactCard from './ContactCard';
 export default function (props) {
 
     // convert each contact in the array 'data' into a ContactCard component
-    let output = props.data.map((c) => <ContactCard key={c.id}
+    let output = props.data.map((c) => <ContactCard key={c._id}
         data={c} deleteContact={props.deleteContact}
         editContact={props.editContact} />);
     return (
