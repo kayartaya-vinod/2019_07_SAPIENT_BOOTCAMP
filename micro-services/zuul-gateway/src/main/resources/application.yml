@@ -1,0 +1,11 @@
+zuul:
+  routes:
+    products:
+      path: /api/products/**
+      url: http://localhost:4000/api/products
+      stripPrefix: true
+    customers:
+      path: /api/customers/**
+      url: http://localhost:5000
+      stripPrefix: false
+    
